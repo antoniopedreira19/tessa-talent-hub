@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
-import tessaLogo from "@/assets/tessa-logo.jpg";
+import { ArrowRight, ShieldCheck, Zap, Timer } from "lucide-react";
 
 const HeroSection = () => {
   const scrollToContact = () => {
@@ -11,94 +10,132 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-hero">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 grid-pattern" />
-      
-      {/* Floating Elements */}
-      <div className="absolute top-1/4 left-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-1/4 right-10 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-float-delayed" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl" />
-      
-      {/* Connection Lines */}
-      <div className="absolute inset-0">
-        <svg className="w-full h-full opacity-20" viewBox="0 0 1200 800">
-          <defs>
-            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="hsl(199, 89%, 48%)" stopOpacity="0" />
-              <stop offset="50%" stopColor="hsl(199, 89%, 48%)" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="hsl(199, 89%, 48%)" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-          <path d="M0,400 Q300,200 600,400 T1200,400" stroke="url(#lineGradient)" strokeWidth="2" fill="none" className="animate-pulse-slow" />
-          <path d="M0,500 Q400,300 800,500 T1200,300" stroke="url(#lineGradient)" strokeWidth="1.5" fill="none" className="animate-pulse-slow" style={{ animationDelay: '1s' }} />
-          <path d="M0,300 Q500,500 1000,300 T1200,500" stroke="url(#lineGradient)" strokeWidth="1" fill="none" className="animate-pulse-slow" style={{ animationDelay: '2s' }} />
-        </svg>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-40 bg-background">
+      {/* NOVO BACKGROUND: Inspirado na Página 2 (Conexões/Tech) 
+        Substituímos as bolhas por uma rede de conexões mais técnica.
+      */}
+      <div className="absolute inset-0 w-full h-full">
+        {/* Gradiente de profundidade */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background z-10" />
+
+        {/* Rede Animada (Tech Network) */}
+        <div className="absolute inset-0 opacity-20 animate-pulse-slow">
+          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path
+              d="M0 100 L20 80 L40 90 L60 70 L80 80 L100 60"
+              stroke="currentColor"
+              strokeWidth="0.5"
+              fill="none"
+              className="text-accent"
+            />
+            <path
+              d="M0 80 L30 50 L50 60 L80 30 L100 40"
+              stroke="currentColor"
+              strokeWidth="0.5"
+              fill="none"
+              className="text-accent/50"
+            />
+            <circle cx="20" cy="80" r="1" className="fill-accent" />
+            <circle cx="60" cy="70" r="1" className="fill-accent" />
+            <circle cx="50" cy="60" r="1" className="fill-accent" />
+          </svg>
+        </div>
+
+        {/* Glow Central sutil */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-accent/5 rounded-full blur-3xl z-0" />
       </div>
 
-      {/* Floating Nodes */}
-      <div className="absolute top-1/3 left-1/4 w-3 h-3 bg-accent rounded-full animate-pulse-slow shadow-glow" />
-      <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-accent/60 rounded-full animate-pulse-slow shadow-glow" style={{ animationDelay: '0.5s' }} />
-      <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-accent/80 rounded-full animate-pulse-slow" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/4 right-1/3 w-2 h-2 bg-accent rounded-full animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
-
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Logo Badge */}
-          <div className="inline-flex flex-col items-center gap-1 px-6 py-3 rounded-2xl bg-card/50 border border-border/50 backdrop-blur-sm mb-8 animate-fade-in">
-            <div className="flex items-center gap-2">
-              <img src={tessaLogo} alt="TESSA" className="w-8 h-8 rounded-md" />
-              <Sparkles className="w-4 h-4 text-accent" />
-            </div>
-            <span className="text-xs font-medium text-foreground tracking-[0.25em]">TALENT • EXPERTS • SMART</span>
-            <span className="text-xs font-medium text-foreground tracking-[0.25em]">SOURCING • AS-A-SERVICE</span>
+      <div className="container mx-auto px-4 lg:px-8 relative z-20">
+        <div className="max-w-5xl mx-auto text-center">
+          {/* Badge Superior - Identidade TESSA */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 backdrop-blur-sm mb-8 animate-fade-in">
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span className="text-xs font-bold text-accent tracking-[0.2em] uppercase">Talent Experts</span>
           </div>
 
-          {/* Main Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            Recrutamento Tech
-            <span className="block text-gradient mt-2">de Alta Performance</span>
+          {/* Título Principal - Inspirado na CAPA DO PDF (Página 1) */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-foreground tracking-tight leading-[0.9] mb-8 animate-slide-up">
+            SMART SOURCING
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent via-blue-400 to-accent mt-2">
+              AS A SERVICE
+            </span>
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-slide-up leading-relaxed" style={{ animationDelay: '0.2s' }}>
+          {/* Subtítulo - Inspirado na Página 2 */}
+          <p
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 animate-slide-up leading-relaxed"
+            style={{ animationDelay: "0.2s" }}
+          >
             Não entregamos apenas pessoas. Entregamos{" "}
-            <span className="text-foreground font-medium">talentos calibrados</span> ao contexto e às necessidades reais do seu negócio.
+            <span className="text-foreground font-semibold">talentos calibrados</span> ao contexto e às necessidades
+            reais do seu negócio.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
-            <Button variant="hero" size="xl" onClick={scrollToContact} className="shadow-glow-strong">
-              Falar com um Especialista
-              <ArrowRight className="w-5 h-5" />
+          {/* Botões */}
+          <div
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-24 animate-slide-up"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <Button variant="hero" size="xl" onClick={scrollToContact} className="shadow-glow-strong min-w-[200px]">
+              Falar com Especialista
+              <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button variant="heroOutline" size="xl" onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}>
+            <Button
+              variant="ghost"
+              size="xl"
+              className="text-foreground hover:text-accent hover:bg-accent/10"
+              onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
+            >
               Conhecer Serviços
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-border/30 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-foreground">5</p>
-              <p className="text-sm text-muted-foreground mt-1">Dias médio de contratação</p>
+          {/* Stats - Dados Corrigidos baseados no PDF (Pág 6 e 8) */}
+          {/* Adicionado padding bottom extra na section e margin aqui para afastar da dobra */}
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-border/30 pt-10 animate-fade-in"
+            style={{ animationDelay: "0.5s" }}
+          >
+            {/* Dado 1: Agilidade (Baseado no Case iForense - Pág 8) */}
+            <div className="flex flex-col items-center">
+              <div className="mb-2 p-2 rounded-lg bg-accent/10 text-accent">
+                <Zap className="w-6 h-6" />
+              </div>
+              <p className="text-4xl font-bold text-foreground">5 Dias</p>
+              <p className="text-sm text-muted-foreground mt-1 uppercase tracking-wide font-medium">
+                Recorde de Onboarding
+              </p>
+              <span className="text-xs text-accent/60 mt-1">(Ref. Case iForense)</span>
             </div>
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-gradient">100%</p>
-              <p className="text-sm text-muted-foreground mt-1">Success Fee</p>
+
+            {/* Dado 2: Modelo Comercial (Baseado na Pág 6) */}
+            <div className="flex flex-col items-center relative">
+              {/* Separadores verticais apenas em desktop */}
+              <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 h-12 w-[1px] bg-border/50" />
+              <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 h-12 w-[1px] bg-border/50" />
+
+              <div className="mb-2 p-2 rounded-lg bg-accent/10 text-accent">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <p className="text-4xl font-bold text-foreground">Risco Zero</p>
+              <p className="text-sm text-muted-foreground mt-1 uppercase tracking-wide font-medium">
+                Modelo Success Fee
+              </p>
+              <span className="text-xs text-accent/60 mt-1">(Pague apenas no sucesso)</span>
             </div>
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-foreground">60</p>
-              <p className="text-sm text-muted-foreground mt-1">Dias de garantia</p>
+
+            {/* Dado 3: Garantia (Baseado na Pág 6) */}
+            <div className="flex flex-col items-center">
+              <div className="mb-2 p-2 rounded-lg bg-accent/10 text-accent">
+                <Timer className="w-6 h-6" />
+              </div>
+              <p className="text-4xl font-bold text-foreground">60 Dias</p>
+              <p className="text-sm text-muted-foreground mt-1 uppercase tracking-wide font-medium">
+                Garantia de Reposição
+              </p>
+              <span className="text-xs text-accent/60 mt-1">(Segurança garantida)</span>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center pt-2">
-          <div className="w-1.5 h-3 rounded-full bg-accent/70 animate-pulse" />
         </div>
       </div>
     </section>
