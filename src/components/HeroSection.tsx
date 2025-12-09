@@ -45,16 +45,19 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo Badge */}
-          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-card/50 border border-border/50 backdrop-blur-sm mb-8 animate-fade-in">
-            <img src={tessaLogo} alt="TESSA" className="w-8 h-8 rounded-md" />
-            <span className="text-sm font-medium text-foreground">TALENT • EXPERTS • SMART SOURCING</span>
-            <Sparkles className="w-4 h-4 text-accent" />
+          <div className="inline-flex flex-col items-center gap-1 px-6 py-3 rounded-2xl bg-card/50 border border-border/50 backdrop-blur-sm mb-8 animate-fade-in">
+            <div className="flex items-center gap-2">
+              <img src={tessaLogo} alt="TESSA" className="w-8 h-8 rounded-md" />
+              <Sparkles className="w-4 h-4 text-accent" />
+            </div>
+            <span className="text-xs font-medium text-foreground tracking-[0.25em]">TALENT • EXPERTS • SMART</span>
+            <span className="text-xs font-medium text-foreground tracking-[0.25em]">SOURCING • AS-A-SERVICE</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            Smart Sourcing
-            <span className="block text-gradient mt-2">as a Service</span>
+            Recrutamento Tech
+            <span className="block text-gradient mt-2">de Alta Performance</span>
           </h1>
 
           {/* Subtitle */}
