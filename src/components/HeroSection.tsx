@@ -11,14 +11,9 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-40 bg-background">
-      {/* NOVO BACKGROUND: Inspirado na Página 2 (Conexões/Tech) 
-        Substituímos as bolhas por uma rede de conexões mais técnica.
-      */}
-      <div className="absolute inset-0 w-full h-full">
-        {/* Gradiente de profundidade */}
+      {/* Background Tech Network (Mantido pois você gostou do movimento) */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background z-10" />
-
-        {/* Rede Animada (Tech Network) */}
         <div className="absolute inset-0 opacity-20 animate-pulse-slow">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
             <path
@@ -40,35 +35,59 @@ const HeroSection = () => {
             <circle cx="50" cy="60" r="1" className="fill-accent" />
           </svg>
         </div>
-
-        {/* Glow Central sutil */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-accent/5 rounded-full blur-3xl z-0" />
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-20">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Badge Superior - Identidade TESSA */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 backdrop-blur-sm mb-8 animate-fade-in">
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-xs font-bold text-accent tracking-[0.2em] uppercase">Talent Experts</span>
-          </div>
-
-          {/* Título Principal - Inspirado na CAPA DO PDF (Página 1) */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-foreground tracking-tight leading-[0.9] mb-8 animate-slide-up">
-            SMART SOURCING
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent via-blue-400 to-accent mt-2">
-              AS A SERVICE
-            </span>
+          {/* TÍTULO PRINCIPAL - TESSA */}
+          <h1 className="text-7xl md:text-9xl font-extrabold text-foreground tracking-tighter mb-6 animate-slide-up">
+            TESSA
           </h1>
 
-          {/* Subtítulo - Inspirado na Página 2 */}
+          {/* ACRÔNIMO - DESTAQUE VISUAL (Refletindo a Pág 1 do PDF) */}
+          {/* Layout responsivo: quebra em mobile, linha única em desktop */}
+          <div className="flex flex-col md:gap-4 mb-8 animate-slide-up" style={{ animationDelay: "0.1s" }}>
+            {/* Linha 1: T-E-S */}
+            <div className="flex flex-wrap justify-center items-center gap-3 md:gap-6 text-lg md:text-2xl font-bold tracking-widest uppercase">
+              <div className="flex items-center gap-1">
+                <span className="text-accent text-3xl md:text-4xl">T</span>
+                <span className="text-muted-foreground">ALENT</span>
+              </div>
+              <span className="text-accent/30 hidden md:inline">•</span>
+              <div className="flex items-center gap-1">
+                <span className="text-accent text-3xl md:text-4xl">E</span>
+                <span className="text-muted-foreground">XPERTS</span>
+              </div>
+              <span className="text-accent/30 hidden md:inline">•</span>
+              <div className="flex items-center gap-1">
+                <span className="text-accent text-3xl md:text-4xl">S</span>
+                <span className="text-muted-foreground">MART</span>
+              </div>
+            </div>
+
+            {/* Linha 2: S-A */}
+            <div className="flex flex-wrap justify-center items-center gap-3 md:gap-6 text-lg md:text-2xl font-bold tracking-widest uppercase mt-2 md:mt-0">
+              <div className="flex items-center gap-1">
+                <span className="text-accent text-3xl md:text-4xl">S</span>
+                <span className="text-muted-foreground">OURCING</span>
+              </div>
+              <span className="text-accent/30 hidden md:inline">•</span>
+              <div className="flex items-center gap-1">
+                <span className="text-accent text-3xl md:text-4xl">A</span>
+                <span className="text-muted-foreground">S A SERVICE</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Subtítulo Descritivo (Pág 2) */}
           <p
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 animate-slide-up leading-relaxed"
             style={{ animationDelay: "0.2s" }}
           >
             Não entregamos apenas pessoas. Entregamos{" "}
-            <span className="text-foreground font-semibold">talentos calibrados</span> ao contexto e às necessidades
-            reais do seu negócio.
+            <span className="text-foreground font-medium">talentos calibrados</span> ao contexto e às necessidades reais
+            do seu negócio.
           </p>
 
           {/* Botões */}
@@ -91,14 +110,13 @@ const HeroSection = () => {
           </div>
 
           {/* Stats - Dados Corrigidos baseados no PDF (Pág 6 e 8) */}
-          {/* Adicionado padding bottom extra na section e margin aqui para afastar da dobra */}
           <div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-border/30 pt-10 animate-fade-in"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-border/30 pt-12 animate-fade-in"
             style={{ animationDelay: "0.5s" }}
           >
-            {/* Dado 1: Agilidade (Baseado no Case iForense - Pág 8) */}
+            {/* Dado 1: Agilidade */}
             <div className="flex flex-col items-center">
-              <div className="mb-2 p-2 rounded-lg bg-accent/10 text-accent">
+              <div className="mb-3 p-2 rounded-lg bg-accent/10 text-accent">
                 <Zap className="w-6 h-6" />
               </div>
               <p className="text-4xl font-bold text-foreground">5 Dias</p>
@@ -108,13 +126,12 @@ const HeroSection = () => {
               <span className="text-xs text-accent/60 mt-1">(Ref. Case iForense)</span>
             </div>
 
-            {/* Dado 2: Modelo Comercial (Baseado na Pág 6) */}
+            {/* Dado 2: Modelo Comercial */}
             <div className="flex flex-col items-center relative">
-              {/* Separadores verticais apenas em desktop */}
               <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 h-12 w-[1px] bg-border/50" />
               <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 h-12 w-[1px] bg-border/50" />
 
-              <div className="mb-2 p-2 rounded-lg bg-accent/10 text-accent">
+              <div className="mb-3 p-2 rounded-lg bg-accent/10 text-accent">
                 <ShieldCheck className="w-6 h-6" />
               </div>
               <p className="text-4xl font-bold text-foreground">Risco Zero</p>
@@ -124,9 +141,9 @@ const HeroSection = () => {
               <span className="text-xs text-accent/60 mt-1">(Pague apenas no sucesso)</span>
             </div>
 
-            {/* Dado 3: Garantia (Baseado na Pág 6) */}
+            {/* Dado 3: Garantia */}
             <div className="flex flex-col items-center">
-              <div className="mb-2 p-2 rounded-lg bg-accent/10 text-accent">
+              <div className="mb-3 p-2 rounded-lg bg-accent/10 text-accent">
                 <Timer className="w-6 h-6" />
               </div>
               <p className="text-4xl font-bold text-foreground">60 Dias</p>
