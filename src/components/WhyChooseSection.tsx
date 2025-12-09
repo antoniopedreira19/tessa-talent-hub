@@ -41,7 +41,8 @@ const nextSteps = [
 
 const WhyChooseSection = () => {
   return (
-    <section className="py-20 lg:py-32 bg-background">
+    // Alterado de bg-background para bg-card (#0B1D3D)
+    <section className="py-20 lg:py-32 bg-card">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -56,7 +57,8 @@ const WhyChooseSection = () => {
           {reasons.map((reason, index) => (
             <div
               key={reason.title}
-              className="group p-6 rounded-2xl bg-card border border-border/30 hover:border-accent/30 transition-all duration-300 animate-slide-up"
+              // Cards agora usam bg-background/50 para contrastar sutilmente com o fundo bg-card
+              className="group p-6 rounded-2xl bg-background/50 border border-border/30 hover:border-accent/30 transition-all duration-300 animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-14 h-14 rounded-xl bg-accent/15 flex items-center justify-center mb-5 group-hover:bg-accent/25 transition-colors">
@@ -70,20 +72,20 @@ const WhyChooseSection = () => {
 
         {/* Next Steps */}
         <div className="max-w-3xl mx-auto">
-          <div className="bg-card rounded-3xl p-8 lg:p-12 border border-border/30 relative overflow-hidden">
+          {/* Container interno alterado para bg-background para destaque */}
+          <div className="bg-background rounded-3xl p-8 lg:p-12 border border-border/30 relative overflow-hidden">
             {/* Background Decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            
+
             <div className="relative z-10">
-              <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
-                Próximos Passos
-              </h3>
+              <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Próximos Passos</h3>
 
               <div className="space-y-4 mb-10">
                 {nextSteps.map((step, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-background/50 border border-border/30 animate-slide-up"
+                    // Itens da lista com fundo bg-card para contraste
+                    className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/30 animate-slide-up"
                     style={{ animationDelay: `${(index + 4) * 0.1}s` }}
                   >
                     <div className="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0">
