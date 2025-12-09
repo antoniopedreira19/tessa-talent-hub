@@ -1,8 +1,6 @@
 import { Quote, Clock, CheckCircle2, Building2 } from "lucide-react";
-
 const CaseSection = () => {
-  return (
-    <section id="case" className="py-20 lg:py-32 bg-card">
+  return <section id="case" className="py-20 lg:py-32 bg-card">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -63,15 +61,11 @@ const CaseSection = () => {
             {/* Outcome */}
             <div className="p-6 rounded-xl bg-card border border-border/30">
               <h4 className="font-semibold text-foreground mb-2">Resultado</h4>
-              <p className="text-muted-foreground leading-relaxed">
-                Profissional sênior identificado, validado tecnicamente e culturalmente, aprovado pelo cliente e integrado à equipe em tempo recorde. O desenvolvedor se adaptou rapidamente e continua na empresa.
-              </p>
+              <p className="text-muted-foreground leading-relaxed">Profissional identificado, validado tecnicamente e culturalmente, aprovado pelo cliente e integrado à equipe em tempo recorde. O desenvolvedor se adaptou rapidamente e continua na empresa.</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CaseSection;
