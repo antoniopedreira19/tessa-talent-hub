@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import tessaLogo from "@/assets/tessa-logo.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,15 +15,20 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/30">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg bg-gradient-accent flex items-center justify-center">
-              <span className="text-accent-foreground font-bold text-lg">T</span>
+          <div className="flex items-center gap-3">
+            <img 
+              src={tessaLogo} 
+              alt="TESSA - Teams as a Service" 
+              className="h-10 w-10 rounded-lg object-cover"
+            />
+            <div className="flex flex-col">
+              <span className="font-bold text-lg text-foreground leading-tight">TESSA</span>
+              <span className="text-[10px] text-muted-foreground tracking-widest uppercase">Teams as a Service</span>
             </div>
-            <span className="font-bold text-xl text-foreground">TESSA IT</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -79,7 +85,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border/50 animate-fade-in">
+          <div className="md:hidden py-4 border-t border-border/30 animate-fade-in bg-background/95 backdrop-blur-md">
             <nav className="flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection("services")}

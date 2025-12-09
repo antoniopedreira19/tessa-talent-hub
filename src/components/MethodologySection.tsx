@@ -2,7 +2,7 @@ import { Lightbulb, RefreshCw, CheckCircle2 } from "lucide-react";
 
 const MethodologySection = () => {
   return (
-    <section id="methodology" className="py-20 lg:py-32 bg-muted/30">
+    <section id="methodology" className="py-20 lg:py-32 bg-card">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -21,8 +21,8 @@ const MethodologySection = () => {
           <div className="animate-slide-in-left">
             <div className="relative">
               {/* Card */}
-              <div className="bg-card rounded-2xl p-8 lg:p-10 border border-border/50 shadow-lg">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-accent flex items-center justify-center mb-6">
+              <div className="bg-background rounded-2xl p-8 lg:p-10 border border-border/30 shadow-lg">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-accent flex items-center justify-center mb-6 shadow-glow">
                   <Lightbulb className="w-8 h-8 text-accent-foreground" />
                 </div>
                 
@@ -36,7 +36,7 @@ const MethodologySection = () => {
 
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-8 h-8 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <CheckCircle2 className="w-4 h-4 text-accent" />
                     </div>
                     <div>
@@ -46,7 +46,7 @@ const MethodologySection = () => {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-8 h-8 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <CheckCircle2 className="w-4 h-4 text-accent" />
                     </div>
                     <div>
@@ -56,7 +56,7 @@ const MethodologySection = () => {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-8 h-8 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <CheckCircle2 className="w-4 h-4 text-accent" />
                     </div>
                     <div>
@@ -68,7 +68,7 @@ const MethodologySection = () => {
               </div>
 
               {/* Decorative Element */}
-              <div className="absolute -z-10 -top-4 -left-4 w-full h-full bg-accent/5 rounded-2xl" />
+              <div className="absolute -z-10 -top-4 -left-4 w-full h-full bg-accent/10 rounded-2xl blur-sm" />
             </div>
           </div>
 
@@ -76,9 +76,9 @@ const MethodologySection = () => {
           <div className="animate-slide-in-right">
             <div className="relative">
               {/* Card */}
-              <div className="bg-card rounded-2xl p-8 lg:p-10 border border-border/50 shadow-lg">
-                <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-6">
-                  <RefreshCw className="w-8 h-8 text-primary-foreground" />
+              <div className="bg-background rounded-2xl p-8 lg:p-10 border border-border/30 shadow-lg">
+                <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mb-6">
+                  <RefreshCw className="w-8 h-8 text-foreground" />
                 </div>
                 
                 <h3 className="text-2xl font-bold text-foreground mb-4">
@@ -91,8 +91,8 @@ const MethodologySection = () => {
 
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <CheckCircle2 className="w-4 h-4 text-primary" />
+                    <div className="w-8 h-8 rounded-lg bg-secondary/50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="w-4 h-4 text-foreground" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Rituais de Feedback</h4>
@@ -101,8 +101,8 @@ const MethodologySection = () => {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <CheckCircle2 className="w-4 h-4 text-primary" />
+                    <div className="w-8 h-8 rounded-lg bg-secondary/50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="w-4 h-4 text-foreground" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Métricas de Performance</h4>
@@ -111,8 +111,8 @@ const MethodologySection = () => {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <CheckCircle2 className="w-4 h-4 text-primary" />
+                    <div className="w-8 h-8 rounded-lg bg-secondary/50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="w-4 h-4 text-foreground" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Suporte ao Onboarding</h4>
@@ -123,7 +123,7 @@ const MethodologySection = () => {
               </div>
 
               {/* Decorative Element */}
-              <div className="absolute -z-10 -top-4 -right-4 w-full h-full bg-primary/5 rounded-2xl" />
+              <div className="absolute -z-10 -top-4 -right-4 w-full h-full bg-secondary/20 rounded-2xl blur-sm" />
             </div>
           </div>
         </div>

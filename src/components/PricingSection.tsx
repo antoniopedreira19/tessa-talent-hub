@@ -51,12 +51,12 @@ const PricingSection = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Icon Container */}
-              <div className="w-20 h-20 mx-auto rounded-2xl bg-muted flex items-center justify-center mb-6 group-hover:bg-accent/10 transition-colors duration-300">
+              <div className="w-20 h-20 mx-auto rounded-2xl bg-card border border-border/30 flex items-center justify-center mb-6 group-hover:bg-accent/15 group-hover:border-accent/30 transition-all duration-300">
                 <feature.icon className="w-10 h-10 text-foreground group-hover:text-accent transition-colors duration-300" />
               </div>
 
               {/* Highlight Badge */}
-              <div className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-4">
+              <div className="inline-block px-4 py-1.5 rounded-full bg-accent/15 text-accent text-sm font-semibold mb-4">
                 {feature.highlight}
               </div>
 
@@ -76,7 +76,7 @@ const PricingSection = () => {
           </p>
           <button
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            className="text-accent font-semibold hover:underline"
+            className="text-accent font-semibold hover:underline transition-all"
           >
             Agende uma conversa sem compromisso →
           </button>
