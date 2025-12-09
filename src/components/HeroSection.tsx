@@ -10,43 +10,69 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-40 bg-background">
-      {/* Background Tech Network (Mantido pois você gostou do movimento) */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background z-10" />
-        <div className="absolute inset-0 opacity-20 animate-pulse-slow">
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path
-              d="M0 100 L20 80 L40 90 L60 70 L80 80 L100 60"
-              stroke="currentColor"
-              strokeWidth="0.5"
-              fill="none"
-              className="text-accent"
-            />
-            <path
-              d="M0 80 L30 50 L50 60 L80 30 L100 40"
-              stroke="currentColor"
-              strokeWidth="0.5"
-              fill="none"
-              className="text-accent/50"
-            />
-            <circle cx="20" cy="80" r="1" className="fill-accent" />
-            <circle cx="60" cy="70" r="1" className="fill-accent" />
-            <circle cx="50" cy="60" r="1" className="fill-accent" />
-          </svg>
-        </div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-accent/5 rounded-full blur-3xl z-0" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-40">
+      {/* --- DYNAMIC TECH BACKGROUND START --- */}
+
+      {/* 1. Deep Navy Base (Slightly different from Header) */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[hsl(218,85%,15%)] via-[hsl(218,90%,10%)] to-[hsl(218,90%,8%)] z-0" />
+
+      {/* 2. Animated AI/Data Orbs (Glowing blobs) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        {/* Top Left Orb - Cyan/Accent */}
+        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-accent/20 rounded-full blur-[120px] animate-pulse-slow" />
+        {/* Bottom Right Orb - Secondary/Blue */}
+        <div
+          className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] animate-pulse-slow"
+          style={{ animationDelay: "2s" }}
+        />
       </div>
+
+      {/* 3. Tech Grid Pattern Overlay */}
+      <div
+        className="absolute inset-0 z-0 opacity-20"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+          backgroundSize: "50px 50px",
+          maskImage: "radial-gradient(ellipse 80% 50% at 50% 0%, black 40%, transparent 100%)",
+        }}
+      />
+
+      {/* 4. Floating Neural Network Lines (Original SVG enhanced with float animation) */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-10 opacity-30 animate-float">
+        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path
+            d="M0 100 L20 80 L40 90 L60 70 L80 80 L100 60"
+            stroke="currentColor"
+            strokeWidth="0.2"
+            fill="none"
+            className="text-accent"
+          />
+          <path
+            d="M0 80 L30 50 L50 60 L80 30 L100 40"
+            stroke="currentColor"
+            strokeWidth="0.2"
+            fill="none"
+            className="text-accent"
+          />
+          {/* Connecting Nodes */}
+          <circle cx="20" cy="80" r="0.5" className="fill-accent animate-pulse" />
+          <circle cx="60" cy="70" r="0.5" className="fill-accent animate-pulse" style={{ animationDelay: "1s" }} />
+          <circle cx="50" cy="60" r="0.5" className="fill-accent animate-pulse" style={{ animationDelay: "0.5s" }} />
+          <circle cx="80" cy="30" r="0.5" className="fill-accent animate-pulse" style={{ animationDelay: "1.5s" }} />
+        </svg>
+      </div>
+
+      {/* --- DYNAMIC TECH BACKGROUND END --- */}
 
       <div className="container mx-auto px-4 lg:px-8 relative z-20">
         <div className="max-w-5xl mx-auto text-center">
           {/* TÍTULO PRINCIPAL - TESSA */}
-          <h1 className="text-7xl md:text-9xl font-extrabold text-foreground tracking-tighter mb-6 animate-slide-up">
+          <h1 className="text-7xl md:text-9xl font-extrabold text-foreground tracking-tighter mb-6 animate-slide-up drop-shadow-2xl">
             TESSA
           </h1>
 
           {/* ACRÔNIMO - DESTAQUE VISUAL (Refletindo a Pág 1 do PDF) */}
-          {/* Layout responsivo: quebra em mobile, linha única em desktop */}
           <div className="flex flex-col md:gap-4 mb-8 animate-slide-up" style={{ animationDelay: "0.1s" }}>
             {/* Linha 1: T-E-S */}
             <div className="flex flex-wrap justify-center items-center gap-3 md:gap-6 text-lg md:text-2xl font-bold tracking-widest uppercase">
@@ -102,21 +128,21 @@ const HeroSection = () => {
             <Button
               variant="ghost"
               size="xl"
-              className="text-foreground hover:text-accent hover:bg-accent/10"
+              className="text-foreground hover:text-accent hover:bg-accent/10 border border-transparent hover:border-accent/20"
               onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
             >
               Conhecer Serviços
             </Button>
           </div>
 
-          {/* Stats - Dados Corrigidos baseados no PDF (Pág 6 e 8) */}
+          {/* Stats - Dados baseados no PDF (Pág 6 e 8) */}
           <div
             className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-border/30 pt-12 animate-fade-in"
             style={{ animationDelay: "0.5s" }}
           >
             {/* Dado 1: Agilidade */}
             <div className="flex flex-col items-center">
-              <div className="mb-3 p-2 rounded-lg bg-accent/10 text-accent">
+              <div className="mb-3 p-2 rounded-lg bg-accent/10 text-accent backdrop-blur-sm">
                 <Zap className="w-6 h-6" />
               </div>
               <p className="text-4xl font-bold text-foreground">5 Dias</p>
@@ -131,7 +157,7 @@ const HeroSection = () => {
               <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 h-12 w-[1px] bg-border/50" />
               <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 h-12 w-[1px] bg-border/50" />
 
-              <div className="mb-3 p-2 rounded-lg bg-accent/10 text-accent">
+              <div className="mb-3 p-2 rounded-lg bg-accent/10 text-accent backdrop-blur-sm">
                 <ShieldCheck className="w-6 h-6" />
               </div>
               <p className="text-4xl font-bold text-foreground">Risco Zero</p>
@@ -143,7 +169,7 @@ const HeroSection = () => {
 
             {/* Dado 3: Garantia */}
             <div className="flex flex-col items-center">
-              <div className="mb-3 p-2 rounded-lg bg-accent/10 text-accent">
+              <div className="mb-3 p-2 rounded-lg bg-accent/10 text-accent backdrop-blur-sm">
                 <Timer className="w-6 h-6" />
               </div>
               <p className="text-4xl font-bold text-foreground">60 Dias</p>
