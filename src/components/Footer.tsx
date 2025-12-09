@@ -1,33 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, ArrowRight, Linkedin } from "lucide-react";
 import tessaLogo from "@/assets/tessa-logo.jpg";
-
 const Footer = () => {
   return (
     // Alterado de bg-card para bg-background (#072355)
     <footer id="contact" className="bg-background">
       {/* CTA Section */}
-      <div className="py-20 lg:py-28 border-b border-border/30">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
-              Vamos transformar necessidade em <span className="text-gradient">talento</span>?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-10">
-              Agende um kick-off gratuito e descubra como podemos acelerar suas contratações tech.
-            </p>
-            <Button
-              variant="hero"
-              size="xl"
-              className="shadow-glow-strong"
-              onClick={() => window.open("mailto:marcelo@tessait.com.br?subject=Quero agendar um kick-off", "_blank")}
-            >
-              Agendar Kick-off
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-          </div>
-        </div>
-      </div>
+      
 
       {/* Contact Info */}
       {/* Mantido bg-background ou removido para ficar uniforme com o container pai */}
@@ -52,19 +31,11 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold mb-4 text-foreground">Contato</h4>
               <div className="space-y-3">
-                <a
-                  href="mailto:marcelo@tessait.com.br"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors text-sm"
-                >
+                <a href="mailto:marcelo@tessait.com.br" className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors text-sm">
                   <Mail className="w-4 h-4" />
                   marcelo@tessait.com.br
                 </a>
-                <a
-                  href="https://wa.me/5541996855782"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors text-sm"
-                >
+                <a href="https://wa.me/5541996855782" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors text-sm">
                   <Phone className="w-4 h-4" />
                   (41) 99685-5782
                 </a>
@@ -74,12 +45,7 @@ const Footer = () => {
             {/* Social */}
             <div>
               <h4 className="font-semibold mb-4 text-foreground">Redes</h4>
-              <a
-                href="https://linkedin.com/company/tessait"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors text-sm"
-              >
+              <a href="https://linkedin.com/company/tessait" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors text-sm">
                 <Linkedin className="w-4 h-4" />
                 LinkedIn
               </a>
@@ -97,5 +63,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;
