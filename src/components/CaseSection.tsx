@@ -3,7 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const CaseSection = () => {
   return (
-    <section id="case" className="py-20 lg:py-32 bg-card relative overflow-hidden">
+    // CORREÇÃO: Alterado de bg-card para bg-background para alternar com a seção anterior
+    <section id="case" className="py-20 lg:py-32 bg-background relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
@@ -24,8 +25,9 @@ const CaseSection = () => {
         {/* Case Study Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {/* Card 1: O Desafio */}
+          {/* CORREÇÃO: Cards agora usam bg-card/50 para contrastar com o fundo da seção */}
           <Card
-            className="bg-background/50 backdrop-blur-sm border-border/30 hover:border-accent/30 transition-all duration-300 group animate-slide-up"
+            className="bg-card/50 backdrop-blur-sm border-border/30 hover:border-accent/30 transition-all duration-300 group animate-slide-up"
             style={{ animationDelay: "0.1s" }}
           >
             <CardContent className="p-8">
@@ -42,7 +44,7 @@ const CaseSection = () => {
 
           {/* Card 2: A Nossa Abordagem */}
           <Card
-            className="bg-background/50 backdrop-blur-sm border-border/30 hover:border-accent/30 transition-all duration-300 group animate-slide-up"
+            className="bg-card/50 backdrop-blur-sm border-border/30 hover:border-accent/30 transition-all duration-300 group animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
             <CardContent className="p-8">
@@ -57,8 +59,9 @@ const CaseSection = () => {
           </Card>
 
           {/* Card 3: O Resultado */}
+          {/* Mantido um destaque sutil, mas baseada em card */}
           <Card
-            className="bg-accent/5 backdrop-blur-sm border-accent/20 hover:border-accent/40 transition-all duration-300 group animate-slide-up"
+            className="bg-card backdrop-blur-sm border-accent/20 hover:border-accent/40 transition-all duration-300 group animate-slide-up shadow-lg"
             style={{ animationDelay: "0.3s" }}
           >
             <CardContent className="p-8">
