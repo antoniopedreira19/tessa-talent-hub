@@ -1,71 +1,82 @@
-import { Quote, Clock, CheckCircle2, Building2 } from "lucide-react";
+import { Building2, Clock, Search, CheckCircle2 } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+
 const CaseSection = () => {
-  return <section id="case" className="py-20 lg:py-32 bg-card">
-      <div className="container mx-auto px-4 lg:px-8">
+  return (
+    <section id="case" className="py-20 lg:py-32 bg-card relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-sm font-semibold text-accent uppercase tracking-wider">Case de Sucesso</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
-            Resultados Reais
-          </h2>
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 mb-4">
+            <Building2 className="w-4 h-4 text-accent" />
+            <span className="text-xs font-semibold text-accent tracking-wider uppercase">Case iForense</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">Inteligência Forense</h2>
+          <p className="text-lg text-muted-foreground">
+            Como entregamos velocidade sem comprometer a qualidade técnica em uma contratação crítica.
+          </p>
         </div>
 
-        {/* Case Study Card */}
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-background rounded-3xl p-8 lg:p-12 border border-border/30 shadow-xl relative overflow-hidden animate-fade-in">
-            {/* Background Decoration */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            
-            {/* Quote Icon */}
-            <div className="absolute top-8 right-8 lg:top-12 lg:right-12">
-              <Quote className="w-16 h-16 text-accent/20" />
-            </div>
-
-            {/* Company Badge */}
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-8">
-              <Building2 className="w-5 h-5 text-accent" />
-              <span className="font-semibold text-foreground">iForense</span>
-            </div>
-
-            {/* Challenge */}
-            <div className="mb-8">
-              <h3 className="text-lg font-semibold text-muted-foreground mb-3">O Desafio</h3>
-              <p className="text-xl lg:text-2xl text-foreground leading-relaxed">
-                Hunting urgente de desenvolvedor híbrido (Backend Java + DevOps) para posição crítica com prazo apertado.
+        {/* Case Study Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {/* Card 1: O Desafio */}
+          <Card
+            className="bg-background/50 backdrop-blur-sm border-border/30 hover:border-accent/30 transition-all duration-300 group animate-slide-up"
+            style={{ animationDelay: "0.1s" }}
+          >
+            <CardContent className="p-8">
+              <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center mb-6 group-hover:bg-destructive/20 transition-colors">
+                <Clock className="w-6 h-6 text-destructive" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-4">O Desafio</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Hunting urgente de desenvolvedor híbrido com requisitos técnicos muito específicos e SLA agressivo de
+                menos de uma semana.
               </p>
-            </div>
+            </CardContent>
+          </Card>
 
-            {/* Results */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div className="flex items-center gap-4 p-4 rounded-xl bg-accent/10 border border-accent/20">
-                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
-                  <Clock className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-foreground">5 dias</p>
-                  <p className="text-sm text-muted-foreground">Do kick-off ao onboarding</p>
-                </div>
+          {/* Card 2: A Nossa Abordagem */}
+          <Card
+            className="bg-background/50 backdrop-blur-sm border-border/30 hover:border-accent/30 transition-all duration-300 group animate-slide-up"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <CardContent className="p-8">
+              <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-6 group-hover:bg-secondary/30 transition-colors">
+                <Search className="w-6 h-6 text-foreground" />
               </div>
+              <h3 className="text-xl font-bold text-foreground mb-4">A Nossa Abordagem</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Sourcing direcionado somado a uma triagem técnica rigorosa e validação comportamental aprofundada.
+              </p>
+            </CardContent>
+          </Card>
 
-              <div className="flex items-center gap-4 p-4 rounded-xl bg-secondary/30 border border-border/30">
-                <div className="w-12 h-12 rounded-xl bg-secondary/50 flex items-center justify-center">
-                  <CheckCircle2 className="w-6 h-6 text-foreground" />
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-foreground">1ª tentativa</p>
-                  <p className="text-sm text-muted-foreground">Aprovação no primeiro candidato</p>
-                </div>
+          {/* Card 3: O Resultado */}
+          <Card
+            className="bg-accent/5 backdrop-blur-sm border-accent/20 hover:border-accent/40 transition-all duration-300 group animate-slide-up"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <CardContent className="p-8">
+              <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-6 group-hover:bg-accent/30 transition-colors shadow-glow">
+                <CheckCircle2 className="w-6 h-6 text-accent" />
               </div>
-            </div>
-
-            {/* Outcome */}
-            <div className="p-6 rounded-xl bg-card border border-border/30">
-              <h4 className="font-semibold text-foreground mb-2">Resultado</h4>
-              <p className="text-muted-foreground leading-relaxed">Profissional identificado, validado tecnicamente e culturalmente, aprovado pelo cliente e integrado à equipe em tempo recorde. O desenvolvedor se adaptou rapidamente e continua na empresa.</p>
-            </div>
-          </div>
+              <h3 className="text-xl font-bold text-foreground mb-4">O Resultado</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Profissional aprovado e onboarding concluído em{" "}
+                <span className="text-foreground font-semibold">apenas 5 dias</span>. Velocidade sem comprometer a
+                qualidade.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default CaseSection;
