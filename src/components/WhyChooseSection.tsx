@@ -1,5 +1,4 @@
-import { Cpu, Settings, ShieldCheck, Handshake, ArrowRight, Calendar, Search, UserCheck } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Cpu, Settings, ShieldCheck, Handshake } from "lucide-react";
 
 const reasons = [
   {
@@ -24,24 +23,9 @@ const reasons = [
   },
 ];
 
-const nextSteps = [
-  {
-    icon: Calendar,
-    text: "Agende um kick-off estratégico conosco",
-  },
-  {
-    icon: Search,
-    text: "Mapeamos profundamente as necessidades",
-  },
-  {
-    icon: UserCheck,
-    text: "Iniciamos a busca do talento ideal",
-  },
-];
-
 const WhyChooseSection = () => {
   return (
-    // Alterado de bg-background para bg-card (#0B1D3D)
+    // Fundo #0B1D3D (bg-card)
     <section className="py-20 lg:py-32 bg-card">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
@@ -53,11 +37,11 @@ const WhyChooseSection = () => {
         </div>
 
         {/* Reasons Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {reasons.map((reason, index) => (
             <div
               key={reason.title}
-              // Cards agora usam bg-background/50 para contrastar sutilmente com o fundo bg-card
+              // bg-background/50 para contraste sutil sobre o bg-card
               className="group p-6 rounded-2xl bg-background/50 border border-border/30 hover:border-accent/30 transition-all duration-300 animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -68,47 +52,6 @@ const WhyChooseSection = () => {
               <p className="text-muted-foreground text-sm leading-relaxed">{reason.description}</p>
             </div>
           ))}
-        </div>
-
-        {/* Next Steps */}
-        <div className="max-w-3xl mx-auto">
-          {/* Container interno alterado para bg-background para destaque */}
-          <div className="bg-background rounded-3xl p-8 lg:p-12 border border-border/30 relative overflow-hidden">
-            {/* Background Decoration */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-
-            <div className="relative z-10">
-              <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Próximos Passos</h3>
-
-              <div className="space-y-4 mb-10">
-                {nextSteps.map((step, index) => (
-                  <div
-                    key={index}
-                    // Itens da lista com fundo bg-card para contraste
-                    className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/30 animate-slide-up"
-                    style={{ animationDelay: `${(index + 4) * 0.1}s` }}
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0">
-                      <step.icon className="w-5 h-5 text-accent" />
-                    </div>
-                    <p className="text-foreground font-medium">{step.text}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="text-center">
-                <Button
-                  variant="hero"
-                  size="xl"
-                  className="shadow-glow-strong"
-                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-                >
-                  Agendar Kick-off
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
