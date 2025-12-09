@@ -4,14 +4,14 @@ import tessaLogo from "@/assets/tessa-logo.jpg";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-card">
+    // Alterado de bg-card para bg-background (#072355)
+    <footer id="contact" className="bg-background">
       {/* CTA Section */}
       <div className="py-20 lg:py-28 border-b border-border/30">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
-              Vamos transformar necessidade em{" "}
-              <span className="text-gradient">talento</span>?
+              Vamos transformar necessidade em <span className="text-gradient">talento</span>?
             </h2>
             <p className="text-lg text-muted-foreground mb-10">
               Agende um kick-off gratuito e descubra como podemos acelerar suas contratações tech.
@@ -30,17 +30,14 @@ const Footer = () => {
       </div>
 
       {/* Contact Info */}
+      {/* Mantido bg-background ou removido para ficar uniforme com o container pai */}
       <div className="py-12 lg:py-16 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
             {/* Logo & Description */}
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <img 
-                  src={tessaLogo} 
-                  alt="TESSA" 
-                  className="h-12 w-12 rounded-lg object-cover"
-                />
+                <img src={tessaLogo} alt="TESSA" className="h-12 w-12 rounded-lg object-cover" />
                 <div>
                   <span className="font-bold text-xl text-foreground block">TESSA</span>
                   <span className="text-xs text-muted-foreground tracking-wider">TEAMS AS A SERVICE</span>
