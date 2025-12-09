@@ -1,25 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, Linkedin, MessageCircle, Calendar, Search, UserCheck } from "lucide-react";
 import tessaLogo from "@/assets/tessa-logo.jpg";
-
-const nextSteps = [
-  {
-    icon: Calendar,
-    title: "1. Kick-off",
-    text: "Agendamos uma conversa estratégica",
-  },
-  {
-    icon: Search,
-    title: "2. Mapeamento",
-    text: "Entendemos sua necessidade real",
-  },
-  {
-    icon: UserCheck,
-    title: "3. Hunting",
-    text: "Iniciamos a busca do talento ideal",
-  },
-];
-
+const nextSteps = [{
+  icon: Calendar,
+  title: "1. Kick-off",
+  text: "Agendamos uma conversa estratégica"
+}, {
+  icon: Search,
+  title: "2. Mapeamento",
+  text: "Entendemos sua necessidade real"
+}, {
+  icon: UserCheck,
+  title: "3. Hunting",
+  text: "Iniciamos a busca do talento ideal"
+}];
 const Footer = () => {
   return (
     // Fundo #072355 (bg-background)
@@ -37,8 +31,7 @@ const Footer = () => {
                 Próximos Passos
               </span>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {nextSteps.map((step, index) => (
-                  <div key={index} className="flex flex-col items-center group">
+                {nextSteps.map((step, index) => <div key={index} className="flex flex-col items-center group">
                     <div className="w-16 h-16 rounded-2xl bg-card border border-border/50 flex items-center justify-center mb-4 group-hover:border-accent/50 group-hover:shadow-glow transition-all duration-300">
                       <step.icon className="w-8 h-8 text-accent" />
                     </div>
@@ -46,11 +39,8 @@ const Footer = () => {
                     <p className="text-sm text-muted-foreground">{step.text}</p>
 
                     {/* Seta conectora (apenas desktop, entre itens) */}
-                    {index < 2 && (
-                      <div className="hidden md:block absolute w-24 h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent top-[4.5rem] ml-[60%]" />
-                    )}
-                  </div>
-                ))}
+                    {index < 2 && <div className="hidden md:block absolute w-24 h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent top-[4.5rem] ml-[60%]" />}
+                  </div>)}
               </div>
             </div>
 
@@ -86,28 +76,18 @@ const Footer = () => {
                   <span className="text-xs text-muted-foreground tracking-wider">TEAMS AS A SERVICE</span>
                 </div>
               </div>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                Smart Sourcing as a Service. Conectamos empresas de tecnologia aos melhores talentos do mercado.
-              </p>
+              <p className="text-muted-foreground text-sm leading-relaxed">Conectamos empresas de tecnologia aos melhores talentos do mercado.</p>
             </div>
 
             {/* Contact */}
             <div>
               <h4 className="font-semibold mb-4 text-foreground">Contato</h4>
               <div className="space-y-3">
-                <a
-                  href="mailto:marcelo@tessait.com.br"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors text-sm"
-                >
+                <a href="mailto:marcelo@tessait.com.br" className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors text-sm">
                   <Mail className="w-4 h-4" />
                   marcelo@tessait.com.br
                 </a>
-                <a
-                  href="https://wa.me/5541996855782"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors text-sm"
-                >
+                <a href="https://wa.me/5541996855782" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors text-sm">
                   <Phone className="w-4 h-4" />
                   (41) 99685-5782
                 </a>
@@ -117,12 +97,7 @@ const Footer = () => {
             {/* Social */}
             <div>
               <h4 className="font-semibold mb-4 text-foreground">Redes</h4>
-              <a
-                href="https://linkedin.com/company/tessait"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors text-sm"
-              >
+              <a href="https://linkedin.com/company/tessait" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors text-sm">
                 <Linkedin className="w-4 h-4" />
                 LinkedIn
               </a>
@@ -140,5 +115,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;
