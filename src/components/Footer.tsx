@@ -62,14 +62,12 @@ const Footer = () => {
               Fale diretamente conosco no WhatsApp para agendar seu kick-off ou tirar dúvidas.
             </p>
 
-            <Button
-              variant="hero"
-              size="xl"
-              className="shadow-glow-strong group"
-              onClick={() => window.open("https://wa.me/5541996855782", "_blank")}
-            >
-              Falar no WhatsApp
-              <MessageCircle className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform" />
+            {/* CORREÇÃO: Uso de asChild com tag <a> para evitar bloqueio do navegador */}
+            <Button asChild variant="hero" size="xl" className="shadow-glow-strong group cursor-pointer">
+              <a href="https://wa.me/5541996855782" target="_blank" rel="noopener noreferrer">
+                Falar no WhatsApp
+                <MessageCircle className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform" />
+              </a>
             </Button>
           </div>
         </div>
