@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import tessaLogo from "@/assets/tessa-logo.jpg";
+import tessaLogo from "@/assets/tessa-logo-transparent.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,19 +20,19 @@ const Header = () => {
         {/* Aumentei a altura do container do header para h-20 (mobile) e h-24 (desktop) */}
         <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo Container */}
-          <div className="flex items-center h-full py-2">
+          <div 
+            className="flex items-center gap-3 cursor-pointer hover:opacity-90 transition-opacity"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             <img
               src={tessaLogo}
               alt="TESSA - Teams as a Service"
-              /* Alterações na Logo:
-                 - h-full: Ocupa toda a altura disponível do header (menos o padding)
-                 - w-auto: Mantém a proporção original
-                 - object-contain: Garante que a imagem inteira apareça sem cortes
-                 - Removido rounded-xl para não cortar cantos
-              */
-              className="h-full w-auto object-contain hover:opacity-90 transition-opacity cursor-pointer"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="h-12 lg:h-16 w-auto object-contain"
             />
+            <div className="flex flex-col">
+              <span className="text-xl lg:text-2xl font-bold text-primary tracking-wide">TESSA</span>
+              <span className="text-[10px] lg:text-xs text-muted-foreground tracking-widest uppercase">Teams as a Service</span>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
