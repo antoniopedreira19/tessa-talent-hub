@@ -22,7 +22,7 @@ const Header = () => {
           top: 0,
           behavior: "smooth"
         })}>
-            <img src={tessaLogo} alt="TESSA - Teams as a Service" className="h-12 lg:h-16 w-auto object-contain" />
+            
             <div className="flex flex-col">
               <span className="text-xl lg:text-2xl font-bold text-primary tracking-wide">    TESSA</span>
               <span className="text-[10px] lg:text-xs text-muted-foreground tracking-widest uppercase">Teams as a Service</span>
