@@ -17,13 +17,20 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/30">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo - Increased size, text removed */}
-          <div className="flex items-center">
+        {/* Aumentei a altura do container do header para h-20 (mobile) e h-24 (desktop) */}
+        <div className="flex items-center justify-between h-20 lg:h-24">
+          {/* Logo Container */}
+          <div className="flex items-center h-full py-2">
             <img
               src={tessaLogo}
               alt="TESSA - Teams as a Service"
-              className="h-12 w-12 md:h-14 md:w-14 rounded-xl object-cover hover:opacity-90 transition-opacity cursor-pointer"
+              /* Alterações na Logo:
+                 - h-full: Ocupa toda a altura disponível do header (menos o padding)
+                 - w-auto: Mantém a proporção original
+                 - object-contain: Garante que a imagem inteira apareça sem cortes
+                 - Removido rounded-xl para não cortar cantos
+              */
+              className="h-full w-auto object-contain hover:opacity-90 transition-opacity cursor-pointer"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             />
           </div>
