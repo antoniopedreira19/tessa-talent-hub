@@ -1,4 +1,4 @@
-import { Cpu, Settings, ShieldCheck, Handshake } from "lucide-react";
+import { Cpu, Settings, Handshake } from "lucide-react";
 
 const reasons = [
   {
@@ -10,11 +10,6 @@ const reasons = [
     icon: Settings,
     title: "Customização Total",
     description: "Cada solução calibrada ao contexto real e cultura do seu negócio.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Zero Risco",
-    description: "Modelo success-based com garantia incluída e total transparência.",
   },
   {
     icon: Handshake,
@@ -36,8 +31,8 @@ const WhyChooseSection = () => {
           </h2>
         </div>
 
-        {/* Reasons Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Reasons Grid - Ajustado para 3 colunas para acomodar os 3 itens */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {reasons.map((reason, index) => (
             <div
               key={reason.title}
