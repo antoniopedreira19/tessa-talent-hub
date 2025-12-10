@@ -70,9 +70,9 @@ const Footer = () => {
             {/* Logo & Description */}
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <img src={tessaLogo} alt="TESSA" className="h-12 w-12 rounded-lg object-cover" />
+                
                 <div>
-                  <span className="font-bold text-xl text-foreground block">TESSA</span>
+                  <span className="font-bold text-xl text-foreground block">     TESSA</span>
                   <span className="text-xs text-muted-foreground tracking-wider">TEAMS AS A SERVICE</span>
                 </div>
               </div>
