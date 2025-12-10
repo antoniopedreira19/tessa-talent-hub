@@ -18,17 +18,14 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/30">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <div className="flex items-center gap-3">
-            <img 
-              src={tessaLogo} 
-              alt="TESSA - Teams as a Service" 
-              className="h-10 w-10 rounded-lg object-cover"
+          {/* Logo - Increased size, text removed */}
+          <div className="flex items-center">
+            <img
+              src={tessaLogo}
+              alt="TESSA - Teams as a Service"
+              className="h-12 w-12 md:h-14 md:w-14 rounded-xl object-cover hover:opacity-90 transition-opacity cursor-pointer"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             />
-            <div className="flex flex-col">
-              <span className="font-bold text-lg text-foreground leading-tight">TESSA</span>
-              <span className="text-[10px] text-muted-foreground tracking-widest uppercase">Teams as a Service</span>
-            </div>
           </div>
 
           {/* Desktop Navigation */}
@@ -61,25 +58,14 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button
-              variant="cta"
-              size="default"
-              onClick={() => scrollToSection("contact")}
-            >
+            <Button variant="cta" size="default" onClick={() => scrollToSection("contact")}>
               Falar com Especialista
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <X className="w-6 h-6 text-foreground" />
-            ) : (
-              <Menu className="w-6 h-6 text-foreground" />
-            )}
+          <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X className="w-6 h-6 text-foreground" /> : <Menu className="w-6 h-6 text-foreground" />}
           </button>
         </div>
 
@@ -111,12 +97,7 @@ const Header = () => {
               >
                 Cases
               </button>
-              <Button
-                variant="cta"
-                size="default"
-                onClick={() => scrollToSection("contact")}
-                className="mt-2"
-              >
+              <Button variant="cta" size="default" onClick={() => scrollToSection("contact")} className="mt-2">
                 Falar com Especialista
               </Button>
             </nav>
